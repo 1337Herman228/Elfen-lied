@@ -1,0 +1,112 @@
+@import '../../styles/style.scss';
+
+.header{
+    position: relative;
+    z-index: 3000;
+    padding-top: var(--navbar-padding-top);
+    padding-left: var(--navbar-padding-left);
+    padding-right: var(--navbar-padding-right);
+
+    @include tablet{
+        padding-top: var(--navbar-padding-top-mobile);
+        padding-inline: var(--navbar-padding-inline-mobile);
+    }
+
+    &__inner{
+        z-index: 3000;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+
+        .navbar{
+            display: flex;
+            align-items: center;
+            width: 100%;
+
+            &__links{
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+                margin-right: clamp(100px, 12.8vw, 247px);
+
+                &-group{
+                    display: flex;
+                    align-items: center;
+                    gap:30px;
+
+                    &-link{
+                        @include hover{
+                            filter:invert(0.15)
+                        }
+                    }
+                }
+
+                &-link {
+                    display: flex;
+                    align-items: center;
+
+                    @include hover{
+                        filter:invert(0.15)
+                    }
+
+                    &--catalog{
+                        gap: 12px;
+                    }
+
+                    &--search-btn{
+                        @include reset-button;
+                        color: var(--color-white);
+                        cursor: pointer;
+                        gap: 12px;
+                    }
+                }
+
+            }
+
+            &__buttons{
+                display: flex;
+                gap: 10px;
+
+                &-btn{
+                    flex-shrink: 0;
+                    flex-grow: 0;
+                    --invert-value: 0;
+                    @include reset-button;
+                    cursor: pointer;
+                    padding: 8px;
+
+                    @include hover{
+                        --invert-value: 0.15;
+                    }
+
+                    &-icon{
+                        transition-duration: var(--transition-duration);
+                        filter: invert(var(--invert-value));
+                    }
+                }
+            }
+        }
+
+    }
+
+    &__logo{
+        flex-shrink: 0;
+        margin-right: clamp(50px, 6.9vw, 133px);
+
+        @include hover{
+            filter:invert(0.15)
+        }
+
+        &-text{
+            font-family: 'Le Murmure';
+            font-size: 45px;
+            line-height: 1;
+            transition-duration: var(--transition-duration);
+
+            @include tablet{
+                font-size: 33px;
+            }
+        }
+    }
+}

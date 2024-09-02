@@ -1,0 +1,64 @@
+:root{
+    --text-main-color: var(--color-white);
+    --background-main-color: var(--color-lavender);
+
+    scrollbar-color: var(--color-lime) transparent;
+}
+
+::selection {
+    background-color: var(--color-white); /* Цвет фона выделения */
+    color: black; /* Цвет текста выделения */
+}
+
+body{
+    @include fluid-text(18, 16);
+
+    font-family: var(--font-family-base);
+    font-weight: 500;
+    line-height: 1.28;
+    color:var(--text-main-color);
+    background-color: var(--background-main-color);
+}
+
+table{
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+a,
+button,
+input,
+textarea,
+svg * {
+    transition-duration: var(--transition-duration);
+}
+
+a{
+    text-decoration: none;
+    color:inherit;
+}
+
+h1, h2, h3, h4 { 
+    font-weight: 500;
+}
+
+h1{
+    @include fluid-text(60, 23);
+}
+
+h2{
+    @include fluid-text(60, 23);
+}
+
+h3,.h3{
+    @include fluid-text(40, 19);
+}
+
+h4{
+    @include fluid-text(20, 18);
+}
+
+hr{
+    border:0 !important;
+    // border-top: 1px solid #2a2a2a !important;
+}
