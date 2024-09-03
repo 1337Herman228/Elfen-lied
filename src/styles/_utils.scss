@@ -16,6 +16,14 @@
     }
 }
 
+.padding-top-section{
+    padding-top: var(--section-padding-y) !important;
+
+    @include tablet{
+        padding-top: var(--section-padding-y-mobile) !important;
+    }
+}
+
 .visually-hidden{
     position: absolute !important;
     width: 1px !important;

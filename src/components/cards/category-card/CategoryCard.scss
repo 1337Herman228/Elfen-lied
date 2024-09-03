@@ -1,0 +1,69 @@
+@import '../../../styles/style.scss';
+
+.category-card{
+    background: url('/svg/category-background.svg') no-repeat;
+    width: 388px;
+    height: 462px;
+    position: relative;
+
+    &::before{
+        content: attr(data-category-name);
+        position: absolute;
+        top:8%;
+        left:0;
+        text-transform: uppercase;
+        font-size: 28px;
+        font-weight: 400;
+        line-height: 35px;
+        width: 180px;
+        text-wrap: wrap;
+    }
+
+    &::after{
+        content: url('/svg/izgotovlenie-na-zakaz.svg');
+        position: absolute;
+        top:50%;
+        left:5%;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 20px;
+    }
+
+
+    &__img{
+        position: absolute;
+        translate: -50% -50%;
+        top: 50%;
+        left: 50%;
+    }
+
+    &__quantity{
+        position: absolute;
+        top:33%;
+        right: -9%;
+        transform: rotate(-23deg);
+        background: url('/svg/quantity-bg.svg') no-repeat;
+        width: 85px;
+        height: 75px;
+        padding: 17px 23px;
+
+
+        &-digit{
+            font-family: 'Floreste';
+            font-size: 40px;
+            padding-right: 3px;
+        }
+
+        &-text{
+            font-size: 15px;
+        }
+
+    }
+
+    &__btn{
+        position: absolute;
+        bottom: -12%;
+        left: 50%;
+        translate: -50% 0;
+    }
+}
