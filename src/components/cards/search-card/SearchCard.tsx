@@ -3,10 +3,12 @@ import './SearchCard.scss'
 
 interface searchProductI {
     id:number,
+    categoryId:number,
     name: string,
     description: string,
-    price: number,
+    price: string,
     img:string,
+    color:string,
 }
 
 const SearchCard = (
@@ -23,6 +25,7 @@ const SearchCard = (
         <>
             <div className="search-card">
                 <div className='search-card__body'>
+                    <span className='search-card__body-color' style={{backgroundColor: product.color}}/>
                     <img
                         className='search-card__body-img'
                         src={product.img}

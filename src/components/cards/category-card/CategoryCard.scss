@@ -5,6 +5,9 @@
     width: 388px;
     height: 462px;
     position: relative;
+    flex-shrink: 0;
+    user-select: none;
+    cursor: pointer;
 
     &::before{
         content: attr(data-category-name);
@@ -35,6 +38,7 @@
         translate: -50% -50%;
         top: 50%;
         left: 50%;
+        pointer-events: none;
     }
 
     &__quantity{

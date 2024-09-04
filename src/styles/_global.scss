@@ -110,3 +110,26 @@ hr{
         zoom: 0.5;
     }
 }
+
+
+.one-ellipse-btn{
+    @include reset-button;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    color:var(--color-white);
+    font-size: 20px;
+    cursor: pointer;
+    transition-duration: var(--transition-duration);
+
+    &::before{
+        content: url('/svg/load-more-btn-forward-ellipse.svg');
+        position: absolute;
+        top:50%;
+        left:50%;
+        transform: translate(-50%, -50%);
+    }
+}

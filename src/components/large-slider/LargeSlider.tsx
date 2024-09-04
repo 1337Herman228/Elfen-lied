@@ -14,7 +14,7 @@ const slider_info = [
         backgroundTitle:'Benjamin Moore',
         title:'Светильник',
         description:'Функциональная дизайнерская лампа для создания максимально комфортного освещения',
-        price:150000,
+        price:'150 000',
     },
     {   
         id:2,
@@ -26,7 +26,7 @@ const slider_info = [
         backgroundTitle:'Paint Here Glory',
         title:'Светильник',
         description:'Функциональная дизайнерская лампа для создания максимально комфортного освещения',
-        price:150000,
+        price:'150 000',
     },
     {   
         id:3,
@@ -38,7 +38,7 @@ const slider_info = [
         backgroundTitle:'Benjamin Moore',
         title:'Светильник',
         description:'Функциональная дизайнерская лампа для создания максимально комфортного освещения',
-        price:150000,
+        price:'150 000',
     }
 ]
 
@@ -52,7 +52,7 @@ interface SliderInfoItemI {
     backgroundTitle:string,
     title:string,
     description:string,
-    price:number,
+    price:string,
 }
 
 const contentStyle: React.CSSProperties = {
@@ -219,7 +219,6 @@ const SliderCardMobile = (
 const LargeSlider = () => {
 
     const [openSlideID, setOpenSlideID] = useState(0);
-    console.log(openSlideID)
 
     const changeSlide = (id:number) => {
         if(openSlideID === id){

@@ -4,6 +4,7 @@ import CategoryCard from '@/components/cards/category-card/CategoryCard';
 import LargeSlider from '@/components/large-slider/LargeSlider';
 import './MainPage.scss';
 import SearchCard from '@/components/cards/search-card/SearchCard';
+import { useEffect, useState } from 'react';
 
 const categories = [
     {
@@ -14,63 +15,131 @@ const categories = [
     },
     {
         id:2,
-        categoryName:'Напольные зеркала',
+        categoryName:'торшеры и лампы',
         quantity: 4,
-        img:'/products/mirror-category.png',
+        img:'/products/lamp-category.png',
     },
     {
         id:3,
-        categoryName:'Напольные зеркала',
+        categoryName:'кресла и стулья',
         quantity: 4,
-        img:'/products/mirror-category.png',
+        img:'/products/sophisticated-unusual-modern-high-chair-wave-form 2.png',
     },
     {
         id:4,
-        categoryName:'Напольные зеркала',
+        categoryName:'столы и тумбы',
         quantity: 4,
-        img:'/products/mirror-category.png',
+        img:'/products/table-category.png',
     },
 ]
 
 const products = [
     {
         id:1,
+        categoryId:1,
         name: 'Kristin',
         description: 'Зеркало напольное',
-        price: 150000,
+        price: '150 000',
         img:'/products/elongated-wave-form-modern-mirror-light-blue-color.png',
+        color:'#A5D4FF',
     },
     {
         id:2,
-        name: 'Kristin',
+        categoryId:1,
+        name: 'Arlene',
         description: 'Зеркало напольное',
-        price: 150000,
-        img:'/products/elongated-wave-form-modern-mirror-light-blue-color.png',
+        price: '150 000',
+        img:'/products/tall-flower-form-modern-mirror-light-blue-color-wh.png',
+        color:'#F0B3EA',
     },
     {
         id:3,
-        name: 'Kristin',
+        categoryId:1,
+        name: 'Colleen',
         description: 'Зеркало напольное',
-        price: 150000,
-        img:'/products/elongated-wave-form-modern-mirror-light-blue-color.png',
+        price: '150 000',
+        img:'/products/tall-sun-form-modern-mirror-light-blue-color-white.png',
+        color:'#8ECDFA',
     },
     {
         id:4,
-        name: 'Kristin',
+        categoryId:1,
+        name: 'coppelia',
         description: 'Зеркало напольное',
-        price: 150000,
-        img:'/products/elongated-wave-form-modern-mirror-light-blue-color.png',
+        price: '150 000',
+        img:'/products/tall-flower-form-modern-mirror-light-blue-color-wh (1).png',
+        color:'#FBE4CA',
     },
     {
         id:5,
-        name: 'Kristin',
+        categoryId:1,
+        name: 'artemide',
         description: 'Зеркало напольное',
-        price: 150000,
-        img:'/products/elongated-wave-form-modern-mirror-light-blue-color.png',
+        price: '150 000',
+        img:'/products/tall-wave-form-modern-mirror-light-lavender-color- (1).png',
+        color:'#F0B5FA',
     },
+    {
+        id:6,
+        categoryId:2,
+        name: 'Aubrey',
+        description: 'Лампа настольная',
+        price: '150 000',
+        img:'/products/sophisticated-unusual-modern-high-lamp-wave-form-- (1).png',
+        color:'#FFC4A5',
+    },
+    
 ]
 
 const MainPage = () => {
+
+    const [openCategoryID, setOpenCategoryID] = useState(0);
+
+
+    const categoriesScrollBlock = ()=>{
+        const cardsContainer = document.querySelector<HTMLElement>('.categories__cards');
+        let isDown = false;
+        let startX: number;
+        let scrollLeft: number;
+
+        if (cardsContainer) {
+            cardsContainer.addEventListener('mousedown', (e: MouseEvent) => {
+                isDown = true;
+                cardsContainer.classList.add('active');
+                startX = e.pageX - cardsContainer.offsetLeft;
+                scrollLeft = cardsContainer.scrollLeft;
+            });
+
+            cardsContainer.addEventListener('mouseleave', () => {
+                isDown = false;
+                cardsContainer.classList.remove('active');
+            });
+
+            cardsContainer.addEventListener('mouseup', () => {
+                isDown = false;
+                cardsContainer.classList.remove('active');
+            });
+
+            cardsContainer.addEventListener('mousemove', (e: MouseEvent) => {
+                if (!isDown) return; // Если мышь не нажата, ничего не делаем
+                e.preventDefault(); // Отменяем стандартное поведение
+                const x = e.pageX - cardsContainer.offsetLeft;
+                const walk = (x - startX) * 1; // Количество пикселей для прокрутки
+                cardsContainer.scrollLeft = scrollLeft - walk;
+            });
+        }
+    }
+
+    const setOpenCategoryIdFunc = (id: number) => {
+        if (openCategoryID === id) setOpenCategoryID(0);
+        else setOpenCategoryID(id);
+    }
+
+    useEffect(() => {
+        categoriesScrollBlock();
+    }, []);
+
+
     return (
         <>
             <h1 className='visually-hidden'>Elfen lied main page</h1>
@@ -83,10 +152,19 @@ const MainPage = () => {
                     <h2 className='categories__title'>Категории</h2>
                     <div className='categories__cards'>
                         {categories.map(category => 
-                            <CategoryCard key={category.id} category={category} />
+                        <span onClick={() => {
+                            setOpenCategoryIdFunc(category.id);
+                         }}>
+                           <CategoryCard 
+                                openCategoryID={openCategoryID} 
+                                key={category.id} 
+                                category={category} 
+                            /> 
+                        </span>
+                            
                         )}
                     </div>
-                    <div className='products products--section'>
+                    <div className='products products--section hidden-tablet'>
                         <div className='products__header'>
                             <button className='products__header-filters'>
                                 <img
@@ -102,14 +180,29 @@ const MainPage = () => {
                                 <span className='products__header-info-text'>20 позиций в категории</span>
                             </div>
                         </div>
-                        <div className='products__body'>
-                            {products.map(product => 
-                                <SearchCard key={product.id} product={product} />
-                            )} 
+                        <div className={`products-container ${openCategoryID && 'show'}`}>
+                            <div className='products__body'>
+                                {products.filter(product => product.categoryId === openCategoryID).map(product => 
+                                    <SearchCard key={product.id} product={product} />
+                                )} 
+                            </div>
+                            <div className='load-more'>
+
+                                <button className='load-more__btn one-ellipse-btn'>
+                                    <span>Загрузить еще</span>
+                                    <img
+                                        className='products__header-filters-icon'
+                                        src='/svg/arrow-down.svg'
+                                        width={24}
+                                        height={24}
+                                        loading='lazy'
+                                    />
+                                </button>
+                            </div>
                         </div>
-                       
                     </div>
                 </div>
+                <div className='main-divider  padding-top-section' />
             </div>
         </>
     );
