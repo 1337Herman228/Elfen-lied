@@ -16,6 +16,14 @@
     }
 }
 
+.section-60{
+    padding-inline: var(--container-padding-x-medium);
+
+    @include tablet{
+        padding-inline: var(--container-padding-x-mobile);
+    }
+}
+
 .padding-top-section{
     padding-top: var(--section-padding-y) !important;
 

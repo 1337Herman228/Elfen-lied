@@ -1,7 +1,22 @@
 
 import './CategoryCard.scss';
 
-const CategoryCard = () => {
+interface categoryI {
+    id:number,
+    categoryName:string,
+    quantity: number,
+    img:string,
+}
+
+const CategoryCard = (
+    {
+        category,
+    }
+    :
+    {
+        category:categoryI,
+    }
+) => {
     return (
         <div 
             data-category-name={'Напольные зеркала'}

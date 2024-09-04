@@ -1,6 +1,57 @@
 @import '../../styles/style.scss';
 
 .categories{
+    
+    &__cards{
+        display: flex;
+        gap:70px;
+    }
+
+    .products{
+
+        &--section{
+            padding-top: 115px;
+        }
+
+        &__header{
+            display: flex;
+            justify-content: space-between;
+            padding-bottom: 77px;
+
+            &-filters{
+                @include reset-button;
+
+                display: flex;
+                gap: 11px;
+
+                &-icon{
+
+                }
+
+                &-text{
+                    color: var(--color-white);
+                    text-transform: uppercase;
+                    font-size: 18px;
+                }
+            }
+
+            &-info{
+
+                &-text{
+                    font-size: 15px;
+                    text-transform: uppercase;
+                }
+            }
+        }
+
+        &__body{
+            display: grid;
+            grid-template-columns: repeat(5,1fr);
+            gap: 107px;
+    
+        }
+    }
+   
 
     &__title{
         font-size: 60px;
