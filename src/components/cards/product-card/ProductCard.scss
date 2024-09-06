@@ -1,0 +1,305 @@
+@import '../../../styles/style.scss';
+
+.product-card{
+    padding: 40px 36px;
+    padding-top: 70px;
+    max-height: 1044px;
+    height: 90%;
+
+    @include tablet{
+        padding: 70px 0px;
+    }
+
+    &__body{
+        display:grid;
+        grid-template-columns: repeat(3,1fr);
+        justify-content: space-between;
+        position: relative;
+
+
+        @include tablet{
+            // grid-template-columns: 1fr 6fr 1fr;
+            grid-template-columns: 15% 70% 15%;
+        }
+
+
+        &::before{ ///чзх
+            content: attr(data-bg-text);
+            position: absolute;
+            z-index: 3000;
+            width: 100%;
+            top:80%;
+            left:50%;
+            transform: translate(-50%, -50%);
+            font-family: 'Floreste';
+            text-transform: uppercase;
+            font-size: clamp(60px, 16.5vw, 354px); //354px
+            font-weight: 500;
+            text-align: center;
+            color:var(--color-white-transparent);
+
+            @include tablet{
+                top:50%;
+                font-size: clamp(55px, 15vw, 165px); //165px
+            }
+
+        }
+
+        .charachteristics{
+            font-family: 'Euclid Circular A';
+            font-size: 18px;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            text-align: left;
+            text-transform: uppercase;
+
+            display: flex;
+            gap: 20px;
+
+            @include tablet{
+                flex-direction: column;
+                gap: 8px;
+                font-weight: 400;
+                font-size: 12px;
+                text-wrap: nowrap;
+            }
+        }
+
+        .color{
+            font-family: 'Euclid Circular A';
+            font-size: 18px;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            text-align: left;
+            text-transform: uppercase;
+
+            display: flex;
+            align-items: center;
+            gap: 33px;
+
+            @include tablet{
+                align-items: start;
+                flex-direction: column;
+                align-items: end;
+                gap: 8px;
+                font-weight: 400;
+                font-size: 12px;
+            }
+
+            &__container{
+                display: flex;
+                align-items: center;
+                gap: 15px;
+            }
+
+            &__icon{
+                border-radius: 50%;
+                width: 16px;
+                height: 16px;
+                border: 3px solid var(--color-white);
+            
+            }
+        }
+
+        &-left{
+            padding-top: 61px;
+            display: flex;
+            flex-direction: column;
+            gap: clamp(90px, 7.3vw, 140px) 140px; //140px
+
+            @include tablet{
+                padding-top: 0;
+                gap: 0;
+                justify-content: space-between;
+            }
+
+            &-article{
+                font-family: Euclid Circular A;
+                font-size: 15px;
+                font-weight: 400;
+                text-align: left;
+
+                @include tablet{
+                    font-size: 12px;
+                    max-width: 37px;
+                    line-height: 15.22px;
+                }
+            }
+
+        }
+
+        &-center{
+            display: grid;
+            place-items: center;
+            position: relative;
+
+            &-img{
+                object-fit: contain;
+                filter: drop-shadow(35px 25px 100px rgba(0, 0, 0, 0.281));
+                z-index: 4000;
+                height: clamp(350px, 34.5vw, 666px); //666px
+
+                // @include tablet{
+                //     height: clamp(350px, 34.5vw, 666px); //666px
+                // }
+            }
+        }
+
+        &-right{
+            display: flex;
+            flex-direction: column;
+            align-items: end;
+
+            padding-top: 61px;
+            gap: clamp(30px, 3.8vw, 73px) 140px; //73px
+
+            @include tablet{
+                padding-top: 0;
+                gap: 0;
+                justify-content: space-between;
+            }
+
+            &-favourite{
+
+                &-icon{
+                    @include tablet{
+                        width: 50px;
+                        height: 50px;
+                    }
+                }
+
+                &-btn{
+                    @include reset-button;
+                    position: relative;
+                    cursor: pointer;
+                    z-index: 9000;
+
+                    @include hover{
+                        filter: invert(0.15);
+                    }
+                }
+            }
+        }
+    }
+
+    &__footer{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        justify-content: space-between;
+        margin-top: 70px;
+
+        &-description{
+            align-self: center;
+            font-family: 'Euclid Circular A';
+            font-size: 20px;
+            font-weight: 400;
+            line-height: 30.8px;
+            text-align: left;
+            max-width: 350px;
+        }
+
+        &-central{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: start;
+            // gap: 22px;
+
+            &-name{
+                //styleName: desk/title card;
+                font-family: 'Floreste';
+                font-size: 100px;
+                font-weight: 500;
+                line-height: 1;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+            }
+
+            &-price{
+                font-family: 'Floreste';
+                font-size: 40px;
+                font-weight: 400;
+                line-height: 38px;
+                letter-spacing: 0.04em;
+                color:var(--color-lime);
+
+                &-rub{
+                    font-family: 'Euclid Circular A';
+                    font-size: 20px;
+                    font-weight: 400;
+                    position: relative;
+                    left: 7px;
+                    bottom: 12px;
+                }
+            }
+        }
+
+        &-buy{
+            display: flex;
+            justify-content: end;
+
+            &-btn{
+                margin-right:150px; ////
+            }
+        }
+    }
+
+    &__footer-mobile{
+        padding-top: 40px;
+        display: flex;
+        flex-direction: column;
+        gap:25px;
+
+        &-info{
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+
+            &-name{
+                font-family: 'Euclid Circular A';
+                font-size: 23px;
+                font-weight: 500;
+                text-align: left;
+                text-transform: uppercase;
+            }
+
+            &-description{
+                font-family: 'Euclid Circular A';
+                font-size: 13px;
+                font-weight: 400;
+                line-height: 20px;
+                text-align: left;
+                width: 70%;
+            }
+        }
+
+        &-form{
+            padding-top: 10px;
+            display: flex;
+            justify-content: space-between;
+
+            &-price{
+                font-family: 'Floreste';
+                font-size: 30px;
+                font-weight: 400;
+                letter-spacing: 0.04em;
+                text-align: center;
+
+                color:var(--color-lime);
+
+                .rub{
+                    font-family: 'Euclid Circular A';
+                    font-size: 20px;
+                    font-weight: 400;
+                    position: relative;
+                    left: 7px;
+                    bottom: 7px;
+                }
+            }
+
+            &-buy{
+                margin-right: 130px;
+            }
+        }
+    }
+}

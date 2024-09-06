@@ -5,8 +5,14 @@
     &__cards{
         display: flex;
         overflow-x: auto;
-        height: 540px;
+        max-height: 540px;
+        height: 80vh;
         gap:70px;
+
+        @include tablet{
+            gap:30px;
+            max-height: 315px;
+        }
 
         scrollbar-width: none;
 
@@ -19,6 +25,7 @@
         &:-webkit-scrollbar-track {    
         display: none;
         }
+
     }
 
     .products{
@@ -31,6 +38,15 @@
             display: flex;
             justify-content: space-between;
             padding-bottom: 77px;
+
+            transition: all 0.3s ease-in-out;
+            opacity: 0;
+            height: 0;
+    
+            &.show{
+                height: 100px;
+                opacity: 1;
+            }
 
             &-filters{
                 @include reset-button;
@@ -60,7 +76,7 @@
 
         &__body{
             display: grid;
-            grid-template-columns: repeat(5,1fr);
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 107px;
     
         }
@@ -77,14 +93,15 @@
         opacity: 0;
         transform: scale(0);
         height: 0;
-        transition: ease;
-        transition-duration: 0.5s;
+
+        transition:all ease 0.5s;
       
         &.show {
             opacity: 1;
             transform: scale(1);
             height: auto;
-          }
+        }
+       
     }
    
 
@@ -93,6 +110,11 @@
         text-transform: uppercase;
         text-align: center;
         padding-bottom: 70px;
+        letter-spacing: 0.5px;
+
+        @include tablet{
+            padding-bottom: 35px;
+        }
 
         @include tablet{
             text-align: start;
@@ -133,4 +155,19 @@
         rotate: -2.2deg;
     }
 
+}
+
+.modal-title{
+    font-size: 23px;
+    text-transform: uppercase;
+    font-family: 'Euclid Circular A';
+    padding-bottom: 40px;
+    letter-spacing: 1px;
+}
+
+.modal-products{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    padding-bottom: 40px;
 }

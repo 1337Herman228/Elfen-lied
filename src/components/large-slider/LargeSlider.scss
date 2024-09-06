@@ -1,6 +1,7 @@
 @import '../../styles/style.scss';
 
 .large-slider-container{
+    padding-top: 20px;
     position: relative;
     z-index: 1000;
     margin-top: calc((var(--navbar-height) + var(--navbar-padding-top))*(-1));
@@ -34,7 +35,7 @@
             min-width: var(--min-width);
             // max-width: var(--max-width);
             animation-name: closeAllSlide;
-            animation-duration: 1s;
+            animation-duration: 2.3s;
             animation-fill-mode: forwards;
 
             display: flex;
@@ -108,7 +109,7 @@
             min-width: var(--min-width);
             // max-width: var(--max-width);
             animation-name: increaseSlide;
-            animation-duration: 1s;
+            animation-duration: 1.3s;
             animation-fill-mode: forwards;
 
             position: relative;
@@ -126,6 +127,9 @@
                 top: 40%;
                 left: 50%;
                 pointer-events: none;
+
+                // filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.2));
+                filter: drop-shadow(35px 25px 100px rgba(0, 0, 0, 0.281));
 
                 @media (max-width: 1550px) {
                     zoom: 0.9;

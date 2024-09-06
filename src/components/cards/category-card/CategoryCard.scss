@@ -9,6 +9,10 @@
     user-select: none;
     cursor: pointer;
 
+    @include tablet{
+        zoom: 0.6;
+    }
+
     &::before{
         content: attr(data-category-name);
         position: absolute;

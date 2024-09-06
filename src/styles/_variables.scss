@@ -1,8 +1,11 @@
+@import './mixins';
+
 :root{
     --color-lime:#D9FF5A;
     --color-lavender:#AE97E8;
     --color-light-lavender:#C5B0FAB2;
     --color-white:#FFFFFF;
+    --color-gray:#DAD1F2;
     --color-delete:#9381D8;
     --color-blue:#AECFFF;
     --color-light-blue:#C8DEFF;
@@ -14,14 +17,19 @@
     --color-white-transparent:#FFFFFF30;
 
     --color-white-transparent-2:#ffffff5e;
+    --color-error: #e64040;
 
     --border-2: 2px solid;
     --border-3: 3px solid;
 
     --border-radius-slide:50px;
-    --border-radius-modal:30px;
     --border-radius-modal-mobile:20px;
     --border-radius-circle:50%;
+
+    --border-radius-modal:30px;
+    @include tablet {
+        --border-radius-modal:20px;
+    }
 
     --font-family-base:'Euclid Circular A', sans-serif;
 
@@ -53,4 +61,10 @@
     --rotation-23: 23deg;
 
     --transition-duration: 0.25s;
+
+    --styled-modal-padding: 60px;
+    @include tablet {
+        --styled-modal-padding: 14px;
+    }
+
 }

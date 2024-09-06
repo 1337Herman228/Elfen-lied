@@ -5,6 +5,11 @@
     max-height: 415px;
     animation: appear 0.4s ease-in-out;
 
+    transition:all 0.25s ease-in-out;
+    cursor: pointer;
+    @include hover{
+        translate: 0 -25px;
+    }
 
     @keyframes appear {
         0% {
@@ -26,7 +31,6 @@
         position: relative;
 
         &-color{
-            content:'';
             position: absolute;
             border-radius: 50%;
             left: 0%;
@@ -95,5 +99,130 @@
                 font-size: 20px;
             }
         }
+    }
+}
+
+.search-card-mobile{
+    display: flex;
+    // width: 400px;
+    gap:30px;
+
+    min-width: 300px;
+
+    animation: appear 0.4s ease-in-out;
+ // max-width: 400px;
+
+    transition:all 0.25s ease-in-out;
+    cursor: pointer;
+    @include hover{
+        translate: 0 -25px;
+    }
+
+    @keyframes appear {
+        0% {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+    .img-container{
+        width: 100px;
+        display: grid;
+        place-items: center;
+
+        &__img{
+            width: 100%;
+            object-fit: contain;
+        }
+    }
+
+    .info-container{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap:25px;
+        // align-items: center;
+        // justify-content: center;
+
+
+        &__body{
+            padding-bottom: 19px;
+            border-bottom: var(--border-2) var(--color-lime);
+            display: flex;
+            flex-direction: column;
+            gap: 13px;
+
+            &-name{
+                display: flex;
+                align-items: center;
+                // justify-content: center;
+                gap: 10px;
+
+                &-color{
+                    border-radius: 50%;
+                    width: 16px;
+                    height: 16px;
+                    border: 3px solid var(--color-white)
+                }
+
+                &-text{
+                    font-size: 15px;
+                    font-family: "Euclid Circular A";
+                    text-transform: uppercase;
+                }
+
+            }
+
+            &-description{
+                font-size: 13px;
+                font-family: "Euclid Circular A";
+                font-weight: 400;
+            }
+
+            
+        }
+
+        &__footer{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            &-price{
+                font-size: 25px;
+                font-family: 'Floreste';
+
+                &-rub{
+                    position: relative;
+                    left: 5px;
+                    bottom: 8px;
+                    font-size: 13px;
+                    font-family: 'Euclid Circular A';
+                    font-weight: 400
+                }
+            }
+
+            &-buy-btn{
+                @include reset-button;
+                cursor: pointer;
+                display: flex;
+                gap: 11px;
+    
+                &-icon{
+
+                }
+    
+                &-text{
+                    color: var(--color-white);
+                    font-size: 16px;
+                    font-weight: 400;
+                }
+
+            }
+        }
+
     }
 }

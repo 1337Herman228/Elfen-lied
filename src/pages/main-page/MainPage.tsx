@@ -5,6 +5,9 @@ import LargeSlider from '@/components/large-slider/LargeSlider';
 import './MainPage.scss';
 import SearchCard from '@/components/cards/search-card/SearchCard';
 import { useEffect, useState } from 'react';
+import CustomModal from '@/components/modal/custom-modal/CustomModal';
+import StyledModal from '@/components/modal/StyledModal';
+import ProductCard from '@/components/cards/product-card/ProductCard';
 
 const categories = [
     {
@@ -216,10 +219,57 @@ const products = [
     },
 ]
 
+
 const MainPage = () => {
 
     const [openCategoryID, setOpenCategoryID] = useState(0);
+    const [isMobileCategoriesModalOpen, setIsMobileCategoriesModalOpen] = useState(false);
 
+    const [product, setProduct] = useState(products[0]);
+    const [isProductsModalOpen, setIsProductsModalOpen] = useState([false, false]);
+    const toggleModal = (idx:number, target:boolean) => {
+       setIsProductsModalOpen((p) => {
+        p[idx] = target;
+        return [...p];
+      });
+    };
+
+    const openProductModal = (idx: number, product: any) => {
+        setProduct(product)
+        toggleModal(idx, true)
+    }
+
+    function getCurrentScreenWidth(): number {
+        return window.outerWidth;
+    }
+
+
+    const closeCategoriesModal = (state:boolean) => {
+        if(!state){
+            setOpenCategoryID(0)
+        }
+    }
+
+    const isWindowOpen = () => {
+
+        const screenWidth = window.innerWidth;
+        if (screenWidth <= 1023) {
+            return !!openCategoryID
+        }
+        else{
+            return false
+        } 
+    }
+
+    function openCategories(id: number) {
+
+        const screenWidth = window.innerWidth;
+        if (screenWidth <= 1023) {
+            setIsMobileCategoriesModalOpen(!isMobileCategoriesModalOpen)
+        }
+        setOpenCategoryIdFunc(id)
+    
+      }
 
     const categoriesScrollBlock = ()=>{
         const cardsContainer = document.querySelector<HTMLElement>('.categories__cards');
@@ -256,8 +306,12 @@ const MainPage = () => {
     }
 
     const setOpenCategoryIdFunc = (id: number) => {
-        if (openCategoryID === id) setOpenCategoryID(0);
-        else setOpenCategoryID(id);
+        if (openCategoryID === id) {
+            setOpenCategoryID(0);
+        }
+        else {
+            setOpenCategoryID(id);
+        }
     }
 
     useEffect(() => {
@@ -277,9 +331,12 @@ const MainPage = () => {
                     <h2 className='categories__title'>Категории</h2>
                     <div className='categories__cards'>
                         {categories.map(category => 
-                        <span onClick={() => {
-                            setOpenCategoryIdFunc(category.id);
-                         }}>
+                        <span 
+                            className='categories__cards-card' 
+                            onClick={() => {
+                                openCategories(category.id);
+                            }}
+                        >
                            <CategoryCard 
                                 openCategoryID={openCategoryID} 
                                 key={category.id} 
@@ -289,8 +346,8 @@ const MainPage = () => {
                             
                         )}
                     </div>
-                    <div className='products products--section hidden-tablet'>
-                        <div className='products__header'>
+                    <div className={`products products--section hidden-tablet`}>
+                        <div className={`products__header ${openCategoryID!==0 ? 'show': ''}`}>
                             <button className='products__header-filters'>
                                 <img
                                     className='products__header-filters-icon'
@@ -305,10 +362,15 @@ const MainPage = () => {
                                 <span className='products__header-info-text'>20 позиций в категории</span>
                             </div>
                         </div>
+                        
                         <div className={`products-container ${openCategoryID && 'show'}`}>
                             <div className='products__body'>
                                 {products.filter(product => product.categoryId === openCategoryID).map(product => 
-                                    <SearchCard key={product.id} product={product} />
+                                    <SearchCard 
+                                        openProductModal={openProductModal} 
+                                        key={product.id} 
+                                        product={product} 
+                                    />
                                 )} 
                             </div>
                             <div className='load-more'>
@@ -326,8 +388,38 @@ const MainPage = () => {
                             </div>
                         </div>
                     </div>
+
+                    <CustomModal 
+                        style={{top:90, width:'90%', right:'50%', transform:'translateX(50%)'}}
+                        isWindowOpen={isWindowOpen()}
+                        setIsWindowOpen={closeCategoriesModal}
+                    >
+                        <div className='modal-title'>{openCategoryID!==0 && categories.filter(category => category.id === openCategoryID)[0].categoryName}</div>
+                        <div className='modal-products'>
+                            {products.filter(product => product.categoryId === openCategoryID).map(product => 
+                                <SearchCard 
+                                    key={product.id} 
+                                    product={product} 
+                                    openProductModal={openProductModal}
+                                />
+                            )} 
+                        </div>   
+                    </CustomModal>
+
                 </div>
                 <div className='main-divider  padding-top-section' />
+                
+                <StyledModal
+                    isModalOpen={isProductsModalOpen}
+                    toggleModal={toggleModal}
+                    modalId={1}
+                    centered={true}
+                    width={getCurrentScreenWidth()}
+                >
+                    <ProductCard product={product}/>
+
+                </StyledModal>
+                    
             </div>
         </>
     );
