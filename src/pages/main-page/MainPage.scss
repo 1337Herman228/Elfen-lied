@@ -3,19 +3,17 @@
 .categories{
     
     &__cards{
-        display: flex;
+
+        cursor:pointer;
+        touch-action: pan-x;
+    
         overflow-x: auto;
-        max-height: 540px;
-        height: 80vh;
-        gap:70px;
-
-        @include tablet{
-            gap:30px;
-            max-height: 315px;
-        }
-
+        white-space: nowrap;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+    
         scrollbar-width: none;
-
+    
         &::-webkit-scrollbar {
             display: none;
         }
@@ -24,6 +22,21 @@
         }
         &:-webkit-scrollbar-track {    
         display: none;
+        }
+
+        &-card{
+            display: inline-block;
+            scroll-snap-align: start;
+        
+            width: 420px;
+            height: 550px;
+            margin-inline: 15px;
+        
+            @include tablet{
+                width: 240px;
+                height: 315px;
+                margin-inline: 15px;
+            }
         }
 
     }
@@ -170,4 +183,185 @@
     flex-direction: column;
     gap: 50px;
     padding-bottom: 40px;
+}
+
+.blogs-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 40px;
+
+    &.padding-top-section{
+        padding-top: 170px;
+
+        @include tablet{
+            padding-top: 50px !important;
+        }
+    }
+
+    @include tablet{
+        padding-bottom: 5px;
+    }
+
+    &__left{
+        display: flex;
+        gap: 45px;
+
+        @include tablet{
+            gap: 20px;
+        }
+
+        .navigation{
+            display: flex;
+            align-items: center;
+            gap: 7px;
+
+            &__dot{ 
+                width: 7px;
+                height: 7px;
+                border-radius: 50%;
+                background-color: #FFFFFF4D;
+
+                &.active{
+                    background-color: var(--color-white);
+                }
+            }
+        }
+
+        &-text{
+            font-family: 'Euclid Circular A';
+            font-size: 60px;
+            font-weight: 500;
+            line-height: 1;
+            text-align: left;
+            text-transform: uppercase;
+
+            @include tablet{
+                font-size: 23px;
+            }
+        }
+    }
+
+    &__right{
+        display: flex;
+        align-items: center;
+        gap: 27px;
+
+        @include tablet{
+            gap: 20px;
+        }
+
+        &__digit{
+            font-family: 'Floreste';
+            font-size: 40px;
+            font-weight: 400;
+            line-height: 1;
+            letter-spacing: 0.04em;
+            text-align: left;
+
+            @include tablet{
+                font-size: 25px;
+            }
+        }
+
+        &__divider{
+            width: 63px;
+            height: 2px;
+            background-color: var(--color-light-purple);
+            margin-bottom: 5px;
+
+            @include tablet{
+                height: 1px;
+                width: 36px;
+                margin-bottom: 3px
+            }
+        }
+    }
+}
+
+.blog-container {
+
+    &--section{
+        margin-inline: 60px;
+        @include tablet{
+            margin-inline: 15px;
+        }
+    }
+
+    touch-action: pan-x;
+
+    cursor: pointer;
+    overflow-x: auto;
+    white-space: nowrap;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+    &::-webkit-scrollbar-thumb {
+        display: none;
+    }
+    &:-webkit-scrollbar-track {    
+    display: none;
+    }
+}
+  
+.blog {
+    display: inline-block;
+    scroll-snap-align: start;
+
+    width: 580px;
+    height: 420px; //342
+    padding-top: 30px;
+    margin-inline: 15px;
+
+    @include tablet{
+        width: 360px;
+        height: 315px;
+    }
+
+}
+
+.main-footer{
+
+    &--section{
+        margin-top: 170px;
+
+        @include tablet{
+            margin-top: 120px;
+            padding-bottom: 55px;
+        }
+    }
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    height: 129px;
+
+    &__left{
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 1;
+        letter-spacing: 0.02em;
+        text-align: left;
+
+        @include tablet{
+            font-size: 13px;
+            font-weight: 400;
+            line-height: 20px;
+            text-align: left;
+        }
+    }
+
+    &__right{
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 21.19px;
+        letter-spacing: 0.02em;
+        text-align: right;
+    }
 }

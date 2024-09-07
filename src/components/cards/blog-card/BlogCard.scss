@@ -1,0 +1,203 @@
+
+@import '../../../styles/style.scss';
+
+.blog-card{
+    width: 580px;
+    height: 342px;
+    background: url('/svg/blog-card-bg.svg') no-repeat center;
+    position: relative;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+
+    transition: all ease 0.3s;
+    cursor: pointer;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+
+    @include hover{
+        translate: 0 -20px;
+    }
+
+    @include tablet{
+        background: url('/svg/blog-card-mobile-bg.svg') no-repeat center;
+        gap: 8px;
+        width: 360px;
+        height: 243px;
+    }
+
+    &__info{
+        padding: 25px;
+
+        display: flex;
+        flex-direction: column;
+
+        @include tablet{
+            padding: 15px;
+        }
+
+        &-header{
+            display: flex;
+            justify-content: space-between;
+
+            &-digit{
+                align-self: start;
+                font-family: 'Euclid Circular A';
+                font-size: 15px;
+                font-weight: 500;
+                text-align: left;
+                color: var(--color-white-transparent-60);
+
+                @include tablet{
+                    font-size: 13px;
+                }
+            }
+
+            &-text{
+                align-self: start;
+                text-wrap: wrap;
+                text-align: right;
+                font-family: 'Euclid Circular A';
+                font-size: 18px;
+                font-weight: 500;
+                max-width: 90px;
+
+                @include tablet{
+                    font-size: 13px;
+                    line-height: 20px;
+                    max-width: 55px;
+                }
+            }
+        }
+
+        &-body{
+            padding-top: 31px;
+            font-family: 'Euclid Circular A';
+            font-size: 28px;
+            font-weight: 500;
+            line-height: 35.5px;
+            text-align: left;
+            text-transform: uppercase;
+            text-wrap: wrap;
+
+            max-width: 230px;
+
+            @include tablet{
+                font-size: 15px;
+                line-height: 19px;
+            }
+        }
+
+        &-footer{
+            padding-top: 75px;
+            font-family: 'Euclid Circular A';
+            font-size: 15px;
+            font-weight: 500;
+            line-height: 19.02px;
+            text-align: left;
+            justify-self: end;
+            text-transform: uppercase;
+            max-width: 82px;
+
+            @include tablet{
+                padding-top: 45px;
+                font-size: 12px;
+                line-height: 15.22px;
+            }
+        }
+    }
+
+    &__img-container{
+        padding: 13px;
+
+        @include tablet{
+            padding: 10px;
+        }
+
+        .img{
+            border-radius: 28px;
+            object-fit: contain;
+            max-width: 316px;
+            max-height: 316px;
+            width: 100%;
+            height: 100%;
+
+            pointer-events: none;
+
+            @include tablet{
+                border-radius: 16px;
+                max-width: 156px;
+                max-height: 223px;
+            }
+        }
+    }
+
+
+    &__time{
+        width: 97px;
+        height: 81px;
+        position: absolute;
+        bottom: -10%;
+        left: 22.5%;
+        rotate: -15deg;
+
+        background: url('/svg/blog-time-ellipse.svg') no-repeat center;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        @include tablet{
+            background: url('/svg/blog-time-ellipse-mobile.svg') no-repeat center;
+            width: 67px;
+            height: 65px;
+            bottom: -12%;
+            left: 21%;
+        }
+
+        &.active{
+            color: var(--color-lavender);
+            background: url('/svg/lime-blog-time-ellipse.svg') no-repeat center;
+            
+            @include tablet{
+                background: url('/svg/lime-blog-time-ellipse-mobile.svg') no-repeat center;
+            }
+        }
+
+        &-digit{
+            font-family: 'Floreste';
+            font-size: 40px;
+            font-weight: 400;
+            text-align: center;
+            line-height: 1;
+
+            @include tablet{
+                font-size: 25px;
+                letter-spacing: 0.04em;
+            }
+        }
+
+        &-text{
+            margin-top: -7px;
+            font-family: 'Euclid Circular A';
+            font-size: 15px;
+            font-weight: 500;
+            text-align: center;
+            text-transform: uppercase;
+            line-height: 1;
+
+            @include tablet{
+                margin-top: -3px;
+                font-size: 12px;
+                font-weight: 400;
+            }
+        }
+    }
+}
+
+
+

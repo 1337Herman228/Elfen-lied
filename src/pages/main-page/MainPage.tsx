@@ -8,8 +8,33 @@ import { useEffect, useState } from 'react';
 import CustomModal from '@/components/modal/custom-modal/CustomModal';
 import StyledModal from '@/components/modal/StyledModal';
 import ProductCard from '@/components/cards/product-card/ProductCard';
+import BlogCard from '@/components/cards/blog-card/BlogCard';
 
 const categories = [
+    {
+        id:1,
+        categoryName:'Напольные зеркала',
+        quantity: 4,
+        img:'/products/mirror-category.png',
+    },
+    {
+        id:2,
+        categoryName:'торшеры и лампы',
+        quantity: 4,
+        img:'/products/lamp-category.png',
+    },
+    {
+        id:3,
+        categoryName:'кресла и стулья',
+        quantity: 4,
+        img:'/products/sophisticated-unusual-modern-high-chair-wave-form 2.png',
+    },
+    {
+        id:4,
+        categoryName:'столы и тумбы',
+        quantity: 4,
+        img:'/products/table-category.png',
+    },
     {
         id:1,
         categoryName:'Напольные зеркала',
@@ -219,11 +244,88 @@ const products = [
     },
 ]
 
+const blogs = [
+    {
+        id:1,
+        headerInfo:'Laura Busche',
+        title:'новая коллекция кресел',
+        date:'14 Января 2023',
+        img:'/images/blog-1.png',
+        imgMobile:'/images/blog-1-mobile.png',
+        time:3,
+    },
+    {
+        id:2,
+        headerInfo:'Laura Busche',
+        title:'Световой дизайн в интерьере',
+        date:'14 Января 2023',
+        img:'/images/blog-2.png',
+        imgMobile:'/images/blog-2-mobile.png',
+        time:3,
+    },
+    {
+        id:3,
+        headerInfo:'Laura Busche',
+        title:'как выбрать шкаф в спальню',
+        date:'14 Января 2023',
+        img:'/images/blog-3.png',
+        imgMobile:'/images/blog-3-mobile.png',
+        time:3,
+    },
+    {
+        id:4,
+        headerInfo:'Laura Busche',
+        title:'новая коллекция кресел',
+        date:'14 Января 2023',
+        img:'/images/blog-1.png',
+        imgMobile:'/images/blog-1-mobile.png',
+        time:3,
+    },
+    {
+        id:5,
+        headerInfo:'Laura Busche',
+        title:'Световой дизайн в интерьере',
+        date:'14 Января 2023',
+        img:'/images/blog-2.png',
+        imgMobile:'/images/blog-2-mobile.png',
+        time:3,
+    },
+    {
+        id:6,
+        headerInfo:'Laura Busche',
+        title:'как выбрать шкаф в спальню',
+        date:'14 Января 2023',
+        img:'/images/blog-3.png',
+        imgMobile:'/images/blog-3-mobile.png',
+        time:3,
+    },
+    {
+        id:7,
+        headerInfo:'Laura Busche',
+        title:'Световой дизайн в интерьере',
+        date:'14 Января 2023',
+        img:'/images/blog-2.png',
+        imgMobile:'/images/blog-2-mobile.png',
+        time:3,
+    },
+    {
+        id:8,
+        headerInfo:'Laura Busche',
+        title:'как выбрать шкаф в спальню',
+        date:'14 Января 2023',
+        img:'/images/blog-3.png',
+        imgMobile:'/images/blog-3-mobile.png',
+        time:3,
+    }
+]
+
 
 const MainPage = () => {
 
     const [openCategoryID, setOpenCategoryID] = useState(0);
     const [isMobileCategoriesModalOpen, setIsMobileCategoriesModalOpen] = useState(false);
+
+    const [openBlogID, setOpenBlogID] = useState(0);
 
     const [product, setProduct] = useState(products[0]);
     const [isProductsModalOpen, setIsProductsModalOpen] = useState([false, false]);
@@ -269,41 +371,42 @@ const MainPage = () => {
         }
         setOpenCategoryIdFunc(id)
     
-      }
+    }
 
-    const categoriesScrollBlock = ()=>{
-        const cardsContainer = document.querySelector<HTMLElement>('.categories__cards');
+    const makeScrollForBlock = (container: HTMLElement, speed: number) => {
         let isDown = false;
         let startX: number;
         let scrollLeft: number;
 
-        if (cardsContainer) {
-            cardsContainer.addEventListener('mousedown', (e: MouseEvent) => {
+        if (container) {
+            container.addEventListener('mousedown', (e: MouseEvent) => {
                 isDown = true;
-                cardsContainer.classList.add('active');
-                startX = e.pageX - cardsContainer.offsetLeft;
-                scrollLeft = cardsContainer.scrollLeft;
+                container.classList.add('active');
+                startX = e.pageX - container.offsetLeft;
+                scrollLeft = container.scrollLeft;
             });
 
-            cardsContainer.addEventListener('mouseleave', () => {
+            container.addEventListener('mouseleave', () => {
                 isDown = false;
-                cardsContainer.classList.remove('active');
+                container.classList.remove('active');
             });
 
-            cardsContainer.addEventListener('mouseup', () => {
+            container.addEventListener('mouseup', () => {
                 isDown = false;
-                cardsContainer.classList.remove('active');
+                container.classList.remove('active');
             });
 
-            cardsContainer.addEventListener('mousemove', (e: MouseEvent) => {
+            container.addEventListener('mousemove', (e: MouseEvent) => {
                 if (!isDown) return; // Если мышь не нажата, ничего не делаем
                 e.preventDefault(); // Отменяем стандартное поведение
-                const x = e.pageX - cardsContainer.offsetLeft;
-                const walk = (x - startX) * 1; // Количество пикселей для прокрутки
-                cardsContainer.scrollLeft = scrollLeft - walk;
+                const x = e.pageX - container.offsetLeft;
+                const walk = (x - startX) * speed; // Количество пикселей для прокрутки
+                container.scrollLeft = scrollLeft - walk;
             });
         }
     }
+
+
 
     const setOpenCategoryIdFunc = (id: number) => {
         if (openCategoryID === id) {
@@ -315,7 +418,13 @@ const MainPage = () => {
     }
 
     useEffect(() => {
-        categoriesScrollBlock();
+
+        const cardsContainer = document.querySelector<HTMLElement>('.categories__cards');
+        if(cardsContainer) makeScrollForBlock(cardsContainer,4);
+
+        const blogContainer = document.querySelector<HTMLElement>('.blog-container');
+        if(blogContainer) makeScrollForBlock(blogContainer,4);
+
     }, []);
 
 
@@ -331,7 +440,7 @@ const MainPage = () => {
                     <h2 className='categories__title'>Категории</h2>
                     <div className='categories__cards'>
                         {categories.map(category => 
-                        <span 
+                        <div 
                             className='categories__cards-card' 
                             onClick={() => {
                                 openCategories(category.id);
@@ -342,7 +451,7 @@ const MainPage = () => {
                                 key={category.id} 
                                 category={category} 
                             /> 
-                        </span>
+                        </div>
                             
                         )}
                     </div>
@@ -407,7 +516,7 @@ const MainPage = () => {
                     </CustomModal>
 
                 </div>
-                <div className='main-divider  padding-top-section' />
+                <div className='main-divider padding-top-section' />
                 
                 <StyledModal
                     isModalOpen={isProductsModalOpen}
@@ -420,6 +529,61 @@ const MainPage = () => {
 
                 </StyledModal>
                     
+                <div className='blogs-header padding-top-section section-60'>
+                    <div className='blogs-header__left'>
+                        <div className='navigation'>
+                            <span className='navigation__dot active'></span>
+                            <span className='navigation__dot'></span>
+                            <span className='navigation__dot'></span>
+                        </div>
+                        <div className='blogs-header__left-text'>
+                            Блог
+                        </div>
+                    </div>
+                    <div className='blogs-header__right'>
+                       <span className='blogs-header__right__digit'>02</span> 
+                       <div className='blogs-header__right__divider'></div> 
+                       <span className='blogs-header__right__digit'>04</span>
+                    </div>
+                </div>
+                <div className="blog-container blog-container--section">
+                    {blogs.map(blog => 
+                        <div className="blog">
+                            <BlogCard 
+                                key={blog.id} 
+                                blog={blog} 
+                                openBlogID={openBlogID}
+                                setOpenBlogID={setOpenBlogID}
+                            />
+                        </div>
+                    )}
+                </div>
+
+                <footer className='main-footer main-footer--section section-60'>
+
+                    <div className='main-footer__left hidden-tablet'>
+                        @2023
+                    </div>
+
+                    <div className='main-footer__left visible-tablet'>
+                        Все права<br/>
+                        защищены<br/>
+                        @2023
+                    </div>
+
+                    <div className='main-footer__right hidden-tablet'>
+                        Все права защищены
+                    </div>
+
+                    <div className='main-footer__right visible-tablet'>
+                       <img 
+                           src='/images/footer-mobile-img.png'
+                           width={148}
+                           height={86}
+                           loading='lazy'
+                       />   
+                    </div>
+                </footer>
             </div>
         </>
     );
