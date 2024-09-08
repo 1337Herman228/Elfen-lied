@@ -8,18 +8,18 @@ import { useEffect } from "react";
 //     ? '/Elfen-lied'
 //     : '';
 
-const BASE_URL = '/Elfen-lied'
+// const BASE_URL = '/Elfen-lied'
 
 // Функция для обновления всех изображений на странице
 function updateImageSources() {
     const images = document.querySelectorAll('img'); // Находим все изображения
     images.forEach(img => {
         // Проверяем, есть ли уже базовый URL в src
-        if (img.src && !img.src.startsWith(BASE_URL)) {
+        if (img.src && !img.src.startsWith('/Elfen-lied')) {
             // Обновляем src с базовым URL
-            img.src = `${BASE_URL}${img.src}`;
+            img.src = `${'/Elfen-lied'}${img.src}`;
         }
-        console.log('BASE_URL', BASE_URL);
+        // console.log('BASE_URL', BASE_URL);
     });
 }
 
