@@ -14,12 +14,10 @@ import { useEffect } from "react";
 function updateImageSources() {
     const images = document.querySelectorAll('img'); // Находим все изображения
     images.forEach(img => {
-        // Проверяем, есть ли уже базовый URL в src
-        if (img.src && !img.src.startsWith('/Elfen-lied')) {
-            // Обновляем src с базовым URL
-            img.src = `${'/Elfen-lied'}${img.src}`;
+        if (img.src && img.src.startsWith('https://1337herman228.github.io/')) {
+          img.src = (img.src).replace('https://1337herman228.github.io/','');  
+          // img.src = `${'/Elfen-lied'}${img.src}`;
         }
-        // console.log('BASE_URL', BASE_URL);
     });
 }
 
