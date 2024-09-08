@@ -1,3 +1,4 @@
+'use client';
 
 import './SearchCard.scss'
 

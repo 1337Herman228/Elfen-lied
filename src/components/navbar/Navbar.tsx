@@ -1,6 +1,5 @@
 'use client'
 
-
 import Link from 'next/link';
 import './Navbar.scss';
 import React, { useEffect, useState } from 'react';
@@ -87,11 +86,11 @@ const Navbar = () => {
     }, [authModal]);
 
     const changeAuthForm = () => {
-        const signInForm = document.querySelector('#sign-in-form')
-        const signUpForm = document.querySelector('#sign-up-form')
+        const signInForm = document.querySelector('#_sign-in-form')
+        const signUpForm = document.querySelector('#_sign-up-form')
 
-        const signInFormMobile = document.querySelector('#sign-in-form-mobile')
-        const signUpFormMobile = document.querySelector('#sign-up-form-mobile')
+        const signInFormMobile = document.querySelector('#_sign-in-form-mobile')
+        const signUpFormMobile = document.querySelector('#_sign-up-form-mobile')
 
         signInForm?.classList.toggle('show')
         signUpForm?.classList.toggle('show')
@@ -105,8 +104,17 @@ const Navbar = () => {
     const [isCartModalOpen, setIsCartModalOpen] = useState(false);
     const [isFavouriteModalOpen, setIsFavouriteModalOpen] = useState(false);
 
+    const [deviceWidth, setDeviceWidth] = useState(0);
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            setDeviceWidth(window.outerWidth);
+        }
+    }, []);
+
     const isDesktopDevice = () => {
-        return window.innerWidth > 1023
+        // if (typeof window !== 'undefined') {
+            return deviceWidth > 1023
+        // }
     }
 
     return (
@@ -186,10 +194,10 @@ const Navbar = () => {
                             setIsWindowOpen={setisAuthModalOpen}
                         >
                            <div className='auth-modal'>
-                                <div id='sign-in-form' className='auth-modal__form show'>
+                                <div id='_sign-in-form' className='auth-modal__form'>
                                     <SignInForm setAuthModal={setAuthModal}/>
                                 </div>
-                                <div id='sign-up-form' className='auth-modal__form'>
+                                <div id='_sign-up-form' className='auth-modal__form show'>
                                     <SignUpForm setAuthModal={setAuthModal}/>
                                 </div>
                             </div>
@@ -255,10 +263,10 @@ const Navbar = () => {
                         setIsWindowOpen={setisMobileAuthModalOpen}
                     >
                         <div className='auth-modal'>
-                            <div id='sign-in-form-mobile' className='auth-modal__form show'>
+                            <div id='_sign-in-form-mobile' className='auth-modal__form'>
                                 <SignInForm setAuthModal={setAuthModal}/>
                             </div>
-                            <div id='sign-up-form-mobile' className='auth-modal__form'>
+                            <div id='_sign-up-form-mobile' className='auth-modal__form show'>
                                 <SignUpForm setAuthModal={setAuthModal}/>
                             </div>
                         </div>

@@ -2,6 +2,7 @@
   "name": "elfen-lied",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -9,10 +10,13 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "antd": "^5.20.4",
-    "next": "14.2.7",
-    "react": "^18",
-    "react-dom": "^18",
+    "@babel/preset-env": "^7.25.4",
+    "@babel/preset-react": "^7.24.7",
+    "antd": "^5.20.5",
+    "next": "^14.2.8",
+    "next-transpile-modules": "^10.0.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "react-hook-form": "^7.53.0",
     "sass": "^1.77.8"
   },
@@ -20,7 +24,6 @@
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
-    "@types/react-input-mask": "^3.0.5",
     "typescript": "^5"
   }
 }

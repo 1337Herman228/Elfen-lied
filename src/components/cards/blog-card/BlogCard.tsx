@@ -1,4 +1,6 @@
+'use client';
 
+import { useEffect, useState } from 'react';
 import './BlogCard.scss';
 
 interface blogI {
@@ -24,7 +26,20 @@ const BlogCard = (
         setOpenBlogID:React.Dispatch<React.SetStateAction<number>>
     }) => {
 
-    const deviceWidth = window.outerWidth;
+
+    const [deviceWidth, setDeviceWidth] = useState(0);
+    useEffect(() => {
+         if (typeof window !== 'undefined') {
+            setDeviceWidth(window.outerWidth);
+        }
+    }, []);
+
+    // let deviceWidth = 0;
+    // if (typeof window !== 'undefined') {
+    //     deviceWidth = window.outerWidth;
+    // }
+
+    // const deviceWidth = window.outerWidth;
 
     return (
         <div onClick={() => openBlogID === blog.id ? setOpenBlogID(0) : setOpenBlogID(blog.id)} key={blog.id} className='blog-card'>

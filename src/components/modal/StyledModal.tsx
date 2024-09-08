@@ -1,7 +1,7 @@
-
+'use client';
 
 import { ConfigProvider, Modal } from 'antd';
-import React, { ReactNode } from 'react';
+import React, { ReactNode, useEffect, useState } from 'react';
 
 const modalStyles = {
     mask: {
@@ -52,13 +52,26 @@ const StyledModal = (
         width?: number,
     }) => {
 
-    const getDeviceWidth = () => window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth
+
+    const [deviceWidth, setDeviceWidth] = useState(0);
+    useEffect(() => {
+         if (typeof window !== 'undefined') {
+            setDeviceWidth(window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth);
+        }
+    }, []);
+
+    // const getDeviceWidth = () =>{
+    //     // if (typeof window !== 'undefined') {
+    //         return window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth
+    //     // }
+    //     // return 0
+    // } 
 
     const theme = {
         token: {
             colorIcon: 'white',
             colorIconHover: 'transparent',
-            padding: getDeviceWidth() < 1024 ? 21 : 60,
+            padding: deviceWidth < 1024 ? 21 : 60,
         },
     }
 

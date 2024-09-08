@@ -341,8 +341,18 @@ const MainPage = () => {
         toggleModal(idx, true)
     }
 
+    const [deviceWidth, setDeviceWidth] = useState(0);
+    useEffect(() => {
+         if (typeof window !== 'undefined') {
+            setDeviceWidth(window.outerWidth);
+        }
+    }, []);
+
     function getCurrentScreenWidth(): number {
-        return window.outerWidth;
+        // if (typeof window !== 'undefined') {
+        return deviceWidth;
+        // }
+        // return 0;
     }
 
 
@@ -354,22 +364,27 @@ const MainPage = () => {
 
     const isWindowOpen = () => {
 
-        const screenWidth = window.innerWidth;
-        if (screenWidth <= 1023) {
-            return !!openCategoryID
-        }
-        else{
-            return false
-        } 
+        // if (typeof window !== 'undefined') {
+                // const screenWidth = window.innerWidth;
+                if (deviceWidth <= 1023) {
+                    return !!openCategoryID
+                }
+                else{
+                    return false
+                } 
+        // }
+        // return false
     }
 
     function openCategories(id: number) {
 
-        const screenWidth = window.innerWidth;
-        if (screenWidth <= 1023) {
-            setIsMobileCategoriesModalOpen(!isMobileCategoriesModalOpen)
-        }
-        setOpenCategoryIdFunc(id)
+        // if (typeof window !== 'undefined') {
+            // const screenWidth = window.innerWidth;
+            if (deviceWidth <= 1023) {
+                setIsMobileCategoriesModalOpen(!isMobileCategoriesModalOpen)
+            }
+            setOpenCategoryIdFunc(id)
+        // }
     
     }
 

@@ -1,7 +1,7 @@
 
 import { Carousel } from 'antd';
 import './LargeSlider.scss';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 
 const slider_info = [
     {   

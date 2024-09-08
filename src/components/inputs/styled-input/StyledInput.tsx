@@ -1,7 +1,6 @@
 
 import { useEffect, useState } from 'react';
 import './StyledInput.scss';
-import InputMask from 'react-input-mask';
 
 const StyledInput = (
     {
