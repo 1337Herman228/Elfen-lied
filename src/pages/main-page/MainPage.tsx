@@ -349,10 +349,7 @@ const MainPage = () => {
     }, []);
 
     function getCurrentScreenWidth(): number {
-        // if (typeof window !== 'undefined') {
         return deviceWidth;
-        // }
-        // return 0;
     }
 
 
@@ -363,29 +360,19 @@ const MainPage = () => {
     }
 
     const isWindowOpen = () => {
-
-        // if (typeof window !== 'undefined') {
-                // const screenWidth = window.innerWidth;
-                if (deviceWidth <= 1023) {
-                    return !!openCategoryID
-                }
-                else{
-                    return false
-                } 
-        // }
-        // return false
+        if (deviceWidth <= 1023) {
+            return !!openCategoryID
+        }
+        else{
+            return false
+        } 
     }
 
     function openCategories(id: number) {
-
-        // if (typeof window !== 'undefined') {
-            // const screenWidth = window.innerWidth;
-            if (deviceWidth <= 1023) {
-                setIsMobileCategoriesModalOpen(!isMobileCategoriesModalOpen)
-            }
-            setOpenCategoryIdFunc(id)
-        // }
-    
+        if (deviceWidth <= 1023) {
+            setIsMobileCategoriesModalOpen(!isMobileCategoriesModalOpen)
+        }
+        setOpenCategoryIdFunc(id)
     }
 
     const makeScrollForBlock = (container: HTMLElement, speed: number) => {

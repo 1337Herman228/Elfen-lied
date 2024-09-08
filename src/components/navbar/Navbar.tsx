@@ -112,9 +112,7 @@ const Navbar = () => {
     }, []);
 
     const isDesktopDevice = () => {
-        // if (typeof window !== 'undefined') {
             return deviceWidth > 1023
-        // }
     }
 
     return (

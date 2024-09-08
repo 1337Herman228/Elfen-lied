@@ -34,13 +34,6 @@ const BlogCard = (
         }
     }, []);
 
-    // let deviceWidth = 0;
-    // if (typeof window !== 'undefined') {
-    //     deviceWidth = window.outerWidth;
-    // }
-
-    // const deviceWidth = window.outerWidth;
-
     return (
         <div onClick={() => openBlogID === blog.id ? setOpenBlogID(0) : setOpenBlogID(blog.id)} key={blog.id} className='blog-card'>
             <div className='blog-card__info'>
