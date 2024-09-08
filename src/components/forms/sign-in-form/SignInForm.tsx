@@ -44,7 +44,8 @@ const SignInForm = (
                     <span className='sign-up-btn__text'>Регистрация</span>
                     <img 
                         className='sign-up-btn__icon'
-                        src='/svg/Arrow 1.svg'
+                        // src='/svg/Arrow 1.svg'
+                         src='svg/Arrow 1.svg'
                         width={41}
                         // height={}
                         loading='lazy'

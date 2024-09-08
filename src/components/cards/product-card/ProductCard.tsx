@@ -61,7 +61,8 @@ const ProductCard = (
                          >
                             <img 
                                 className='product-card__body-right-favourite-icon'
-                                src={isFavourite ? '/svg/pink-favourite-icon.svg' : '/svg/lime-favourite-icon.svg'}
+                                // src={isFavourite ? '/svg/pink-favourite-icon.svg' : '/svg/lime-favourite-icon.svg'}
+                                src={isFavourite ? 'svg/pink-favourite-icon.svg' : 'svg/lime-favourite-icon.svg'}
                                 width={79}
                                 height={79}
                                 loading='lazy'
@@ -97,7 +98,8 @@ const ProductCard = (
                     <button className='product-card__footer-buy-btn buy-btn'>
                         <img
                             className=''
-                            src='/svg/cart-lime.svg'
+                            // src='/svg/cart-lime.svg'
+                            src='svg/cart-lime.svg'
                             width={21}
                             height={21}
                             loading='lazy'
@@ -123,7 +125,8 @@ const ProductCard = (
                     <button className='product-card__footer-mobile-form-buy buy-btn'>
                         <img
                             className=''
-                            src='/svg/cart-lime.svg'
+                            // src='/svg/cart-lime.svg'
+                            src='svg/cart-lime.svg'
                             width={21}
                             height={21}
                             loading='lazy'
@@ -131,31 +134,6 @@ const ProductCard = (
                         <span>Купить</span>
                     </button>
                 </div>
-
-                
-                {/* <div className='product-card__footer-description'>
-                    Функциональная дизайнерская лампа для создания максимально комфортного освещения
-                </div>
-                <div className='product-card__footer-central'>
-                    <span className='product-card__footer-central-name'>
-                        {product.name}
-                    </span>
-                    <span className='product-card__footer-central-price'>
-                        {product.price}<span className='product-card__footer-central-price-rub'>₽</span>
-                    </span>
-                </div>
-                <div className='product-card__footer-buy'>
-                    <button className='product-card__footer-buy-btn buy-btn'>
-                        <img
-                            className=''
-                            src='/svg/cart-lime.svg'
-                            width={21}
-                            height={21}
-                            loading='lazy'
-                        />
-                        <span>Купить</span>
-                    </button>
-                </div> */}
             </div>
         </div>
     );

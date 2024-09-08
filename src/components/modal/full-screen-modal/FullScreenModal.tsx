@@ -60,7 +60,8 @@ const FullScreenModal = (
                     <button className='close-btn' >
                         <img
                             className='close-btn--icon' 
-                            src='/svg/x.svg'
+                            src='svg/x.svg'
+                            // src='/svg/x.svg'
                             alt='close'
                             width={20}
                             height={20}

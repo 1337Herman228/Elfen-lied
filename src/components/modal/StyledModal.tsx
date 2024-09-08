@@ -29,7 +29,8 @@ const StyledModal = (
         <div style={{display:'flex', alignItems:'center', gap:'14px', marginRight:'132px'}}>
             <div style={{color:'var(--color-gray)', fontFamily:'Euclid Circular A', textTransform:'uppercase', fontSize:'18px', fontWeight:'500', letterSpacing:'2px'}}>Закрыть</div>
             <img 
-                src = {'/svg/x.svg'}
+                // src = {'/svg/x.svg'}
+                src = {'svg/x.svg'}
                 width={22}
                 height={22}
             />

@@ -49,7 +49,8 @@ const SearchCard = (
                     <button className='search-card__footer-buy-btn'>
                         <img
                             className='search-card__footer-buy-btn-img'
-                            src='/svg/cart-lime.svg'
+                            // src='/svg/cart-lime.svg'
+                             src='svg/cart-lime.svg'
                             width={24}
                             height={24}
                             loading='lazy'
@@ -90,7 +91,8 @@ const SearchCard = (
                         <button className='info-container__footer-buy-btn'>
                             <img
                                 className='info-container__footer-buy-btn-icon'
-                                src='/svg/cart-lime.svg'
+                                // src='/svg/cart-lime.svg'
+                                 src='svg/cart-lime.svg'
                                 width={24}
                                 height={24}
                                 loading='lazy'
