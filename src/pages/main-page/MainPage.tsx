@@ -10,56 +10,56 @@ import StyledModal from '@/components/modal/StyledModal';
 import ProductCard from '@/components/cards/product-card/ProductCard';
 import BlogCard from '@/components/cards/blog-card/BlogCard';
 
-const baseUrl = '//Elfen-lied'
+const baseUrl = '/Elfen-lied'
 
 const categories = [
     {
         id:1,
         categoryName:'Напольные зеркала',
         quantity: 4,
-        img: baseUrl+'/products//mirror-category.png',
+        img: baseUrl+'/products/mirror-category.png',
     },
     {
         id:2,
         categoryName:'торшеры и лампы',
         quantity: 4,
-        img:baseUrl+'/products//lamp-category.png',
+        img:baseUrl+'/products/lamp-category.png',
     },
     {
         id:3,
         categoryName:'кресла и стулья',
         quantity: 4,
-        img:baseUrl+'/products//sophisticated-unusual-modern-high-chair-wave-form 2.png',
+        img:baseUrl+'/products/sophisticated-unusual-modern-high-chair-wave-form 2.png',
     },
     {
         id:4,
         categoryName:'столы и тумбы',
         quantity: 4,
-        img:baseUrl+'/products//table-category.png',
+        img:baseUrl+'/products/table-category.png',
     },
     {
         id:1,
         categoryName:'Напольные зеркала',
         quantity: 4,
-        img:baseUrl+'/products//mirror-category.png',
+        img:baseUrl+'/products/mirror-category.png',
     },
     {
         id:2,
         categoryName:'торшеры и лампы',
         quantity: 4,
-        img:baseUrl+'/products//lamp-category.png',
+        img:baseUrl+'/products/lamp-category.png',
     },
     {
         id:3,
         categoryName:'кресла и стулья',
         quantity: 4,
-        img:baseUrl+'/products//sophisticated-unusual-modern-high-chair-wave-form 2.png',
+        img:baseUrl+'/products/sophisticated-unusual-modern-high-chair-wave-form 2.png',
     },
     {
         id:4,
         categoryName:'столы и тумбы',
         quantity: 4,
-        img:baseUrl+'/products//table-category.png',
+        img:baseUrl+'/products/table-category.png',
     },
 ]
 

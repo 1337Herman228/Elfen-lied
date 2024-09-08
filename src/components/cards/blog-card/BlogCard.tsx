@@ -52,7 +52,7 @@ const BlogCard = (
             <div className='blog-card__img-container'>
                 <img 
                     className='img'
-                    src={`/Elfen-lied${deviceWidth < 1024 ? blog.imgMobile : blog.img}`}
+                    src={`${deviceWidth < 1024 ? blog.imgMobile : blog.img}`}
                     // width={316}
                     // height={257}
                     loading='lazy'

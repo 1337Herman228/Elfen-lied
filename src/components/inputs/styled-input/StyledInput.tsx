@@ -104,14 +104,14 @@ const StyledInput = (
                 <button type='button' className='form-field__label-password-show-btn' onClick={() => setIsShow(!isShow) }>
                 {isShow ?
                     <img
-                        src='/svg/Eye-slash.svg'
+                        src='svg/Eye-slash.svg'
                         alt=''
                         width={25}
                         height={25}
                     />
                     :
                     <img
-                        src='/svg/Eye.svg'
+                        src='svg/Eye.svg'
                         alt=''
                         width={25}
                         height={25}
