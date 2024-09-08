@@ -9,8 +9,8 @@ const slider_info = [
         name:'Santa Trinita',
         colorOpen:'--color-lavender',
         colorClose:'--color-light-lavender',
-        imgOpen:'/products/lamp-3.png',
-        imgClose:'/products/lamp-3-rotate.png',
+        imgOpen:'products/lamp-3.png',
+        imgClose:'products/lamp-3-rotate.png',
         backgroundTitle:'Benjamin Moore',
         title:'Светильник',
         description:'Функциональная дизайнерская лампа для создания максимально комфортного освещения',
@@ -21,8 +21,8 @@ const slider_info = [
         name:'Santa Trinita',
         colorOpen:'--color-pink',
         colorClose:'--color-pink',
-        imgOpen:'/products/chair-2.png',
-        imgClose:'/products/chair-2-rotate.png',
+        imgOpen:'products/chair-2.png',
+        imgClose:'products/chair-2-rotate.png',
         backgroundTitle:'Paint Here Glory',
         title:'Светильник',
         description:'Функциональная дизайнерская лампа для создания максимально комфортного освещения',
@@ -33,8 +33,8 @@ const slider_info = [
         name:'Santa Trinita',
         colorOpen:'--color-blue',
         colorClose:'--color-blue',
-        imgOpen:'/products/table-2.png',
-        imgClose:'/products/table-2-rotate.png',
+        imgOpen:'products/table-2.png',
+        imgClose:'products/table-2-rotate.png',
         backgroundTitle:'Benjamin Moore',
         title:'Светильник',
         description:'Функциональная дизайнерская лампа для создания максимально комфортного освещения',
@@ -122,7 +122,7 @@ const SliderCard = (
                                     <button className='buy-btn'>
                                         <img
                                             className='buy-btn__img'
-                                            src='/svg/cart-lime.svg'
+                                            src='svg/cart-lime.svg'
                                             width={21}
                                             height={21}
                                             loading='lazy'
@@ -177,7 +177,7 @@ const SliderCardMobile = (
                         <button className='slider-card-mobile__body-buy-btn buy-btn'>
                             <img
                                 className='buy-btn__img'
-                                src='/svg/cart-lime.svg'
+                                src='svg/cart-lime.svg'
                                 width={21}
                                 height={21}
                                 loading='lazy'

@@ -10,7 +10,7 @@ import StyledModal from '@/components/modal/StyledModal';
 import ProductCard from '@/components/cards/product-card/ProductCard';
 import BlogCard from '@/components/cards/blog-card/BlogCard';
 
-const baseUrl = '/Elfen-lied'
+const baseUrl = '//Elfen-lied'
 
 const categories = [
     {
@@ -252,8 +252,8 @@ const blogs = [
         headerInfo:'Laura Busche',
         title:'новая коллекция кресел',
         date:'14 Января 2023',
-        img:'/images/blog-1.png',
-        imgMobile:'/images/blog-1-mobile.png',
+        img:'images/blog-1.png',
+        imgMobile:'images/blog-1-mobile.png',
         time:3,
     },
     {
@@ -261,8 +261,8 @@ const blogs = [
         headerInfo:'Laura Busche',
         title:'Световой дизайн в интерьере',
         date:'14 Января 2023',
-        img:'/images/blog-2.png',
-        imgMobile:'/images/blog-2-mobile.png',
+        img:'images/blog-2.png',
+        imgMobile:'images/blog-2-mobile.png',
         time:3,
     },
     {
@@ -270,55 +270,11 @@ const blogs = [
         headerInfo:'Laura Busche',
         title:'как выбрать шкаф в спальню',
         date:'14 Января 2023',
-        img:'/images/blog-3.png',
-        imgMobile:'/images/blog-3-mobile.png',
+        img:'images/blog-3.png',
+        imgMobile:'images/blog-3-mobile.png',
         time:3,
     },
-    {
-        id:4,
-        headerInfo:'Laura Busche',
-        title:'новая коллекция кресел',
-        date:'14 Января 2023',
-        img:'/images/blog-1.png',
-        imgMobile:'/images/blog-1-mobile.png',
-        time:3,
-    },
-    {
-        id:5,
-        headerInfo:'Laura Busche',
-        title:'Световой дизайн в интерьере',
-        date:'14 Января 2023',
-        img:'/images/blog-2.png',
-        imgMobile:'/images/blog-2-mobile.png',
-        time:3,
-    },
-    {
-        id:6,
-        headerInfo:'Laura Busche',
-        title:'как выбрать шкаф в спальню',
-        date:'14 Января 2023',
-        img:'/images/blog-3.png',
-        imgMobile:'/images/blog-3-mobile.png',
-        time:3,
-    },
-    {
-        id:7,
-        headerInfo:'Laura Busche',
-        title:'Световой дизайн в интерьере',
-        date:'14 Января 2023',
-        img:'/images/blog-2.png',
-        imgMobile:'/images/blog-2-mobile.png',
-        time:3,
-    },
-    {
-        id:8,
-        headerInfo:'Laura Busche',
-        title:'как выбрать шкаф в спальню',
-        date:'14 Января 2023',
-        img:'/images/blog-3.png',
-        imgMobile:'/images/blog-3-mobile.png',
-        time:3,
-    }
+
 ]
 
 
