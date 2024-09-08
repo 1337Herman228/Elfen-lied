@@ -122,7 +122,7 @@ const SliderCard = (
                                     <button className='buy-btn'>
                                         <img
                                             className='buy-btn__img'
-                                            src='svg/cart-lime.svg'
+                                            src='/svg/cart-lime.svg'
                                             width={21}
                                             height={21}
                                             loading='lazy'
@@ -177,7 +177,7 @@ const SliderCardMobile = (
                         <button className='slider-card-mobile__body-buy-btn buy-btn'>
                             <img
                                 className='buy-btn__img'
-                                src='svg/cart-lime.svg'
+                                src='/svg/cart-lime.svg'
                                 width={21}
                                 height={21}
                                 loading='lazy'

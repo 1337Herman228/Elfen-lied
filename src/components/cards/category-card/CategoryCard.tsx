@@ -38,8 +38,8 @@ const CategoryCard = (
             </div>
             <img
                 className='category-card__btn'
-                // src={openCategoryID === category.id ?'/svg/category-btn-open.svg' : '/svg/category-btn.svg'} //category-btn-open.svg
-                src={openCategoryID === category.id ?'svg/category-btn-open.svg' : 'svg/category-btn.svg'} //category-btn-open.svg
+                // src={openCategoryID === category.id ?'//svg/category-btn-open.svg' : '//svg/category-btn.svg'} //category-btn-open.svg
+                src={openCategoryID === category.id ?'/svg/category-btn-open.svg' : '/svg/category-btn.svg'} //category-btn-open.svg
                 width={101}
                 height={101}
                 loading='lazy'

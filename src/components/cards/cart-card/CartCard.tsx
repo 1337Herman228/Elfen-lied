@@ -76,8 +76,8 @@ const CartCard = ({product}:{product:searchProductI}) => {
                     <div className='body__delete'>
                         <button className='body__delete-btn'>
                             <img
-                                // src='/svg/garbage-can.svg'
-                                src='svg/garbage-can.svg'
+                                // src='//svg/garbage-can.svg'
+                                src='/svg/garbage-can.svg'
                                 width={30}
                                 height={33}
                                 loading='lazy'
@@ -96,8 +96,8 @@ const CartCard = ({product}:{product:searchProductI}) => {
                         <button onClick={() => changeQuantity(selectedQuantity - 1)} ref={btnMinusRef} className='footer__quantity-btn footer-quantity-btn--minus'>
                             <img
                                 className='footer__quantity-btn-icon'
-                                // src='/svg/btn-minus.svg'
-                                src='svg/btn-minus.svg'
+                                // src='//svg/btn-minus.svg'
+                                src='/svg/btn-minus.svg'
                                 width={45}
                                 height={45}
                                 loading='lazy'
@@ -107,8 +107,8 @@ const CartCard = ({product}:{product:searchProductI}) => {
                         <button onClick={() => changeQuantity(selectedQuantity + 1)} ref={btnPlusRef} className='footer__quantity-btn footer__quantity-btn--plus'>
                             <img
                                 className='footer__quantity-btn-icon'
-                                // src='/svg/btn-plus.svg'
-                                src='svg/btn-plus.svg'
+                                // src='//svg/btn-plus.svg'
+                                src='/svg/btn-plus.svg'
                                 width={45}
                                 height={45}
                                 loading='lazy'

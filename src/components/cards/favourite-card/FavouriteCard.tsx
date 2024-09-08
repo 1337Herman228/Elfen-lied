@@ -76,8 +76,8 @@ const FavouriteCard = ({product}:{product:searchProductI}) => {
                     <div className='body__delete'>
                         <button className='body__delete-btn'>
                             <img
-                                // src='/svg/pink-favourite-icon.svg'
-                                src='svg/pink-favourite-icon.svg'
+                                // src='//svg/pink-favourite-icon.svg'
+                                src='/svg/pink-favourite-icon.svg'
                                 width={50}
                                 height={50}
                                 loading='lazy'
