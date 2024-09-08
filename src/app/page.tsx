@@ -4,9 +4,11 @@ import MainPage from "@/pages/main-page/MainPage";
 import { useEffect } from "react";
 
 // Определяем базовый URL в зависимости от окружения
-const BASE_URL = (process.env.NODE_ENV === 'production')
-    ? '/Elfen-lied'
-    : '';
+// const BASE_URL = (process.env.NODE_ENV === 'production')
+//     ? '/Elfen-lied'
+//     : '';
+
+const BASE_URL = '/Elfen-lied'
 
 // Функция для обновления всех изображений на странице
 function updateImageSources() {
@@ -17,6 +19,7 @@ function updateImageSources() {
             // Обновляем src с базовым URL
             img.src = `${BASE_URL}${img.src}`;
         }
+        console.log('BASE_URL', BASE_URL);
     });
 }
 
@@ -26,6 +29,7 @@ export default function Page() {
   useEffect(() => {
     updateImageSources();
   },[])
+
 
   return (
     <MainPage />

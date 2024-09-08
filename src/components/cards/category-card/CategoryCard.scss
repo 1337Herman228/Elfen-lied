@@ -1,7 +1,7 @@
 @import '../../../styles/style.scss';
 
 .category-card{
-    background: url('/svg/category-background.svg') no-repeat;
+    background: url('/Elfen-lied/svg/category-background.svg') no-repeat;
     width: 388px;
     height: 462px;
     position: relative;
@@ -27,7 +27,7 @@
     }
 
     &::after{
-        content: url('/svg/izgotovlenie-na-zakaz.svg');
+        content: url('/Elfen-lied/svg/izgotovlenie-na-zakaz.svg');
         position: absolute;
         top:50%;
         left:5%;
@@ -50,7 +50,7 @@
         top:33%;
         right: -9%;
         transform: rotate(-23deg);
-        background: url('/svg/quantity-bg.svg') no-repeat;
+        background: url('/Elfen-lied/svg/quantity-bg.svg') no-repeat;
         width: 85px;
         height: 75px;
         padding: 17px 23px;

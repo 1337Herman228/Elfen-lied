@@ -1,10 +1,11 @@
 
 @import '../../../styles/style.scss';
 
+
 .blog-card{
     width: 580px;
     height: 342px;
-    background: url('/svg/blog-card-bg.svg') no-repeat center;
+    background: url('/Elfen-lied/svg/blog-card-bg.svg') no-repeat center;
     position: relative;
 
     display: grid;
@@ -23,7 +24,7 @@
     }
 
     @include tablet{
-        background: url('/svg/blog-card-mobile-bg.svg') no-repeat center;
+        background: url('/Elfen-lied/svg/blog-card-mobile-bg.svg') no-repeat center;
         gap: 8px;
         width: 360px;
         height: 243px;
@@ -144,7 +145,7 @@
         left: 22.5%;
         rotate: -15deg;
 
-        background: url('/svg/blog-time-ellipse.svg') no-repeat center;
+        background: url('/Elfen-lied/svg/blog-time-ellipse.svg') no-repeat center;
 
         display: flex;
         flex-direction: column;
@@ -152,7 +153,7 @@
         justify-content: center;
 
         @include tablet{
-            background: url('/svg/blog-time-ellipse-mobile.svg') no-repeat center;
+            background: url('/Elfen-lied/svg/blog-time-ellipse-mobile.svg') no-repeat center;
             width: 67px;
             height: 65px;
             bottom: -12%;
@@ -161,10 +162,10 @@
 
         &.active{
             color: var(--color-lavender);
-            background: url('/svg/lime-blog-time-ellipse.svg') no-repeat center;
+            background: url('/Elfen-lied/svg/lime-blog-time-ellipse.svg') no-repeat center;
             
             @include tablet{
-                background: url('/svg/lime-blog-time-ellipse-mobile.svg') no-repeat center;
+                background: url('/Elfen-lied/svg/lime-blog-time-ellipse-mobile.svg') no-repeat center;
             }
         }
 
