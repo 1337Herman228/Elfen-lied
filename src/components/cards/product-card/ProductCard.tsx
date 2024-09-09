@@ -62,7 +62,7 @@ const ProductCard = (
                             <img 
                                 className='product-card__body-right-favourite-icon'
                                 // src={isFavourite ? '//svg/pink-favourite-icon.svg' : '//svg/lime-favourite-icon.svg'}
-                                src={isFavourite ? '/svg/pink-favourite-icon.svg' : '/svg/lime-favourite-icon.svg'}
+                                src={isFavourite ? 'svg/pink-favourite-icon.svg' : 'svg/lime-favourite-icon.svg'}
                                 width={79}
                                 height={79}
                                 loading='lazy'
@@ -99,7 +99,7 @@ const ProductCard = (
                         <img
                             className=''
                             // src='//svg/cart-lime.svg'
-                            src='/svg/cart-lime.svg'
+                            src='svg/cart-lime.svg'
                             width={21}
                             height={21}
                             loading='lazy'
@@ -126,7 +126,7 @@ const ProductCard = (
                         <img
                             className=''
                             // src='//svg/cart-lime.svg'
-                            src='/svg/cart-lime.svg'
+                            src='svg/cart-lime.svg'
                             width={21}
                             height={21}
                             loading='lazy'

@@ -17,49 +17,25 @@ const categories = [
         id:1,
         categoryName:'Напольные зеркала',
         quantity: 4,
-        img: baseUrl+'/products/mirror-category.png',
+        img: 'products/mirror-category.png',
     },
     {
         id:2,
         categoryName:'торшеры и лампы',
         quantity: 4,
-        img:baseUrl+'/products/lamp-category.png',
+        img:'products/lamp-category.png',
     },
     {
         id:3,
         categoryName:'кресла и стулья',
         quantity: 4,
-        img:baseUrl+'/products/sophisticated-unusual-modern-high-chair-wave-form 2.png',
+        img:'products/sophisticated-unusual-modern-high-chair-wave-form 2.png',
     },
     {
         id:4,
         categoryName:'столы и тумбы',
         quantity: 4,
-        img:baseUrl+'/products/table-category.png',
-    },
-    {
-        id:1,
-        categoryName:'Напольные зеркала',
-        quantity: 4,
-        img:baseUrl+'/products/mirror-category.png',
-    },
-    {
-        id:2,
-        categoryName:'торшеры и лампы',
-        quantity: 4,
-        img:baseUrl+'/products/lamp-category.png',
-    },
-    {
-        id:3,
-        categoryName:'кресла и стулья',
-        quantity: 4,
-        img:baseUrl+'/products/sophisticated-unusual-modern-high-chair-wave-form 2.png',
-    },
-    {
-        id:4,
-        categoryName:'столы и тумбы',
-        quantity: 4,
-        img:baseUrl+'/products/table-category.png',
+        img:'products/table-category.png',
     },
 ]
 
@@ -70,7 +46,7 @@ const products = [
         name: 'Kristin',
         description: 'Зеркало напольное',
         price: '150 000',
-        img:baseUrl+'/products//elongated-wave-form-modern-mirror-light-blue-color.png',
+        img:'products//elongated-wave-form-modern-mirror-light-blue-color.png',
         color:'#A5D4FF',
     },
     {
@@ -79,7 +55,7 @@ const products = [
         name: 'Arlene',
         description: 'Зеркало напольное',
         price: '150 000',
-        img:baseUrl+'/products//tall-flower-form-modern-mirror-light-blue-color-wh.png',
+        img:'products//tall-flower-form-modern-mirror-light-blue-color-wh.png',
         color:'#F0B3EA',
     },
     {
@@ -88,7 +64,7 @@ const products = [
         name: 'Colleen',
         description: 'Зеркало напольное',
         price: '150 000',
-        img:baseUrl+'/products//tall-sun-form-modern-mirror-light-blue-color-white.png',
+        img:'products//tall-sun-form-modern-mirror-light-blue-color-white.png',
         color:'#8ECDFA',
     },
     {
@@ -97,7 +73,7 @@ const products = [
         name: 'coppelia',
         description: 'Зеркало напольное',
         price: '150 000',
-        img:baseUrl+'/products//tall-flower-form-modern-mirror-light-blue-color-wh (1).png',
+        img:'products//tall-flower-form-modern-mirror-light-blue-color-wh (1).png',
         color:'#FBE4CA',
     },
     {
@@ -106,7 +82,7 @@ const products = [
         name: 'artemide',
         description: 'Зеркало напольное',
         price: '150 000',
-        img:baseUrl+'/products//tall-wave-form-modern-mirror-light-lavender-color- (1).png',
+        img:'products//tall-wave-form-modern-mirror-light-lavender-color- (1).png',
         color:'#F0B5FA',
     },
     {
@@ -115,7 +91,7 @@ const products = [
         name: 'Aubrey',
         description: 'Лампа настольная',
         price: '150 000',
-        img:baseUrl+'/products//sophisticated-unusual-modern-high-lamp-wave-form-- (1).png',
+        img:'products//sophisticated-unusual-modern-high-lamp-wave-form-- (1).png',
         color:'#FFC4A5',
     },
     {
@@ -124,7 +100,7 @@ const products = [
         name: 'Leslie',
         description: 'Лампа настольная',
         price: '150 000',
-        img:baseUrl+'/products//sophisticated-unusual-modern-high-lamp-tree-form--.png',
+        img:'products//sophisticated-unusual-modern-high-lamp-tree-form--.png',
         color:'#88E379',
     },
     {
@@ -133,7 +109,7 @@ const products = [
         name: 'Darrell',
         description: 'Лампа настольная',
         price: '150 000',
-        img:baseUrl+'/products//sophisticated-unusual-modern-high-lamp-wave-form-- (3) 1.png',
+        img:'products//sophisticated-unusual-modern-high-lamp-wave-form-- (3) 1.png',
         color:'#FA8EEF',
     },
     {
@@ -142,7 +118,7 @@ const products = [
         name: 'coppelia',
         description: 'Лампа настольная',
         price: '150 000',
-        img:baseUrl+'/products//sophisticated-unusual-modern-high-lamp-wave-form-- (2).png',
+        img:'products//sophisticated-unusual-modern-high-lamp-wave-form-- (2).png',
         color:'#29D0D9',
     },
     {
@@ -151,7 +127,7 @@ const products = [
         name: 'artemide',
         description: 'Лампа настольная',
         price: '150 000',
-        img:baseUrl+'/products//sophisticated-unusual-modern-high-lamp-wave-form--.png',
+        img:'products//sophisticated-unusual-modern-high-lamp-wave-form--.png',
         color:'#89D5FF',
     },
     {
@@ -160,7 +136,7 @@ const products = [
         name: 'Kathryn',
         description: 'Кресло',
         price: '150 000',
-        img:baseUrl+'/products//sophisticated-unusual-modern-high-chair-wave-form- (1).png',
+        img:'products//sophisticated-unusual-modern-high-chair-wave-form- (1).png',
         color:'#FBE4CA',
     },
     {
@@ -169,7 +145,7 @@ const products = [
         name: 'Wendy',
         description: 'Кресло',
         price: '150 000',
-        img:baseUrl+'/products//sophisticated-unusual-modern-high-chair-wave-form-.png',
+        img:'products//sophisticated-unusual-modern-high-chair-wave-form-.png',
         color:'#F0B3EA',
     },
     {
@@ -178,7 +154,7 @@ const products = [
         name: 'Judith',
         description: 'Кресло',
         price: '150 000',
-        img:baseUrl+'/products//tall-unusual-modern-chair-light-lavender-color-whi (1).png',
+        img:'products//tall-unusual-modern-chair-light-lavender-color-whi (1).png',
         color:'#F18EFA',
     },
     {
@@ -187,7 +163,7 @@ const products = [
         name: 'Jane',
         description: 'Кресло',
         price: '150 000',
-        img:baseUrl+'/products//unusual-modern-chair-lavender-color.png',
+        img:'products//unusual-modern-chair-lavender-color.png',
         color:'#5C544A',
     },
     {
@@ -196,7 +172,7 @@ const products = [
         name: 'Darlene',
         description: 'Кресло',
         price: '150 000',
-        img:baseUrl+'/products//unusual-modern-high-chair-wave-form.png',
+        img:'products//unusual-modern-high-chair-wave-form.png',
         color:'#F0B5FA',
     },
     {
@@ -205,7 +181,7 @@ const products = [
         name: 'Kathryn',
         description: 'Стол',
         price: '150 000',
-        img:baseUrl+'/products//elongated-form-tall-modern-table-light-blue-color- (2).png',
+        img:'products//elongated-form-tall-modern-table-light-blue-color- (2).png',
         color:'#A5D4FF',
     },
     {
@@ -214,7 +190,7 @@ const products = [
         name: 'Wendy',
         description: 'Стол',
         price: '150 000',
-        img:baseUrl+'/products//unusual-modern-high-wide-wave-glowing-light-table- (1).png',
+        img:'products//unusual-modern-high-wide-wave-glowing-light-table- (1).png',
         color:'#F0DFB3',
     },
     {
@@ -223,7 +199,7 @@ const products = [
         name: 'Judith',
         description: 'Стол',
         price: '150 000',
-        img:baseUrl+'/products//unusual-modern-tall-wide-wave-glowing-light-table- 1.png',
+        img:'products//unusual-modern-tall-wide-wave-glowing-light-table- 1.png',
         color:'#F88EFA',
     },
     {
@@ -232,7 +208,7 @@ const products = [
         name: 'Jane',
         description: 'Стол',
         price: '150 000',
-        img:baseUrl+'/products//unusual-modern-high-wide-wave-glowing-light-table- (2) 1.png',
+        img:'products//unusual-modern-high-wide-wave-glowing-light-table- (2) 1.png',
         color:'#CACFFB',
     },
     {
@@ -241,7 +217,7 @@ const products = [
         name: 'Darlene',
         description: 'Стол',
         price: '150 000',
-        img:baseUrl+'/products//wide-form-hight-modern-table-light-lavender-color- (2).png',
+        img:'products//wide-form-hight-modern-table-light-lavender-color- (2).png',
         color:'#F0B5FA',
     },
 ]
@@ -420,7 +396,7 @@ const MainPage = () => {
                             <button className='products__header-filters'>
                                 <img
                                     className='products__header-filters-icon'
-                                    src='/svg/filters.svg'
+                                    src='svg/filters.svg'
                                     width={20}
                                     height={21}
                                     loading='lazy'
@@ -448,7 +424,7 @@ const MainPage = () => {
                                     <span>Загрузить еще</span>
                                     <img
                                         className='products__header-filters-icon'
-                                        src='/svg/arrow-down.svg'
+                                        src='svg/arrow-down.svg'
                                         width={24}
                                         height={24}
                                         loading='lazy'

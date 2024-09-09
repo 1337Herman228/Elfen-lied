@@ -18,8 +18,19 @@ function updateImageSources() {
         img.src = (img.src).replace('https://1337herman228.github.io/Elfen-lied/','');  
         // img.src = `${'/Elfen-lied'}${img.src}`;
       }
+
+      if (img.src && img.src.startsWith('https://1337herman228.github.io/Elfen-lied')) {
+        img.src = (img.src).replace('https://1337herman228.github.io/Elfen-lied','');  
+        // img.src = `${'/Elfen-lied'}${img.src}`;
+      }
+
       if (img.src && (img.src.startsWith('https://1337herman228.github.io/'))) {
         img.src = (img.src).replace('https://1337herman228.github.io/','');  
+        // img.src = `${'/Elfen-lied'}${img.src}`;
+      }
+
+      if (img.src && (img.src.startsWith('https://1337herman228.github.io'))) {
+        img.src = (img.src).replace('https://1337herman228.github.io','');  
         // img.src = `${'/Elfen-lied'}${img.src}`;
       }
     });

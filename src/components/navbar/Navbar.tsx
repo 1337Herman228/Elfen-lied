@@ -129,7 +129,7 @@ const Navbar = () => {
                         <Link className='navbar__links-link navbar__links-link--catalog' href='/catalog'>
                             <img 
                                 className="navbar__links-link-icon" 
-                                src="/svg/catalog.svg"
+                                src="svg/catalog.svg"
                                 alt="catalog" 
                                 width={15} 
                                 height={15} 
@@ -150,7 +150,7 @@ const Navbar = () => {
                         <button className='navbar__links-link navbar__links-link--search-btn'>
                             <img 
                                 className="navbar__links-link-icon" 
-                                src="/svg/search.svg"
+                                src="svg/search.svg"
                                 alt="search" 
                                 width={26} 
                                 height={26} 
@@ -167,7 +167,7 @@ const Navbar = () => {
                         >
                             <img 
                                 className="navbar__buttons-btn-icon" 
-                                src="/svg/favourite.svg"
+                                src="svg/favourite.svg"
                                 alt="favourite" 
                                 width={22} 
                                 height={20} 
@@ -178,7 +178,7 @@ const Navbar = () => {
                         <button onClick={()=>setisAuthModalOpen(true)} className='navbar__buttons-btn'> 
                             <img 
                                 className="navbar__buttons-btn-icon" 
-                                src="/svg/profile.svg"
+                                src="svg/profile.svg"
                                 alt="profile" 
                                 width={19} 
                                 height={21} 
@@ -207,7 +207,7 @@ const Navbar = () => {
                         >
                             <img 
                                 className="navbar__buttons-btn-icon" 
-                                src="/svg/cart.svg"
+                                src="svg/cart.svg"
                                 alt="cart" 
                                 width={21} 
                                 height={22} 
@@ -222,7 +222,7 @@ const Navbar = () => {
                     <button className='navbar__buttons-btn'>
                         <img 
                             className="navbar__buttons-btn-icon" 
-                            src="/svg/search-mobile.svg"
+                            src="svg/search-mobile.svg"
                             alt="search" 
                             width={24} 
                             height={24} 
@@ -236,7 +236,7 @@ const Navbar = () => {
                     >
                         <img 
                             className="navbar__buttons-btn-icon" 
-                            src="/svg/favourite.svg"
+                            src="svg/favourite.svg"
                             alt="favourite" 
                             width={25} 
                             height={24} 
@@ -247,7 +247,7 @@ const Navbar = () => {
                     <button onClick={()=>setisMobileAuthModalOpen(true)} className='navbar__buttons-btn'> 
                         <img 
                             className="navbar__buttons-btn-icon" 
-                            src="/svg/profile.svg"
+                            src="svg/profile.svg"
                             alt="profile" 
                             width={24} 
                             height={24} 
@@ -276,7 +276,7 @@ const Navbar = () => {
                     >
                         <img 
                             className="navbar__buttons-btn-icon" 
-                            src="/svg/cart.svg"
+                            src="svg/cart.svg"
                             alt="cart" 
                             width={24} 
                             height={24} 
@@ -287,7 +287,7 @@ const Navbar = () => {
                     <button className='navbar__buttons-btn'>
                         <img 
                             className="navbar__buttons-btn-icon" 
-                            src="/svg/tel.svg"
+                            src="svg/tel.svg"
                             alt="telephone" 
                             width={24} 
                             height={24} 

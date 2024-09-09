@@ -52,7 +52,7 @@ const SignUpForm = (
                 >
                     <img 
                         className='sign-in-btn__icon'
-                        src='/svg/Arrow 2.svg'
+                        src='svg/Arrow 2.svg'
                         width={41}
                         // height={}
                         loading='lazy'
