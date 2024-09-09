@@ -356,10 +356,10 @@ const MainPage = () => {
     useEffect(() => {
 
         const cardsContainer = document.querySelector<HTMLElement>('.categories__cards');
-        if(cardsContainer) makeScrollForBlock(cardsContainer,4);
+        if(cardsContainer) makeScrollForBlock(cardsContainer,3);
 
         const blogContainer = document.querySelector<HTMLElement>('.blog-container');
-        if(blogContainer) makeScrollForBlock(blogContainer,4);
+        if(blogContainer) makeScrollForBlock(blogContainer,3);
 
     }, []);
 
